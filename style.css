@@ -1,0 +1,235 @@
+/* -------------- CSS BY Christina Carrasquilla --------------  */
+
+/*  -------------- IMPORTED FONTS --------------  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lacquer&display=fallback');
+@font-face {
+    font-family: 'trashhandregular';
+    src: url('fonts/TrashHand-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*  -------------- CSS REST  -------------- */
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/*  -------------- HTML5 display-role reset for older browsers  -------------- */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*  -------------- ROOT VARIABLES --------------  */
+:root {
+    font-family: Inter, sans-serif;
+    color: var(--burnt-brown);
+    font-size: 1.25em;
+    --flour-white: #FAF3E0;
+    --wheat-flax:#E9E0D3;
+    --crust-orange:#D2691E;
+    --burnt-brown:#5A3E36;
+}
+/*  -------------- GLOBAL STYLE  -------------- */
+html {
+    background-color: var(--flour-white);
+    min-width: 485px;
+}
+body {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+.skip-link {
+    position: absolute;
+    left: 50%;
+    transform: translateY(-100%);
+}
+.skip-link {
+    background: var(--burnt-brown);
+    color: var(--wheat-flax);
+    height: 30px;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+.skip-link:focus {
+    transform: translateY(0%);
+}
+nav {
+    margin-top:2rem;
+}
+nav a {
+    line-height: 2rem;
+}
+form {
+    width:80%;
+}
+label, legend {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+fieldset {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.checkbox-group label {
+    font-weight: normal;
+    display: inline;
+}
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--crust-orange);
+    color: var(--burnt-brown);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--burnt-brown);
+    color: var(--flour-white);
+}
+footer {
+    background-color: var(--burnt-brown);
+    color: var(--flour-white);
+    border-top: 1rem solid var(--burnt-brown);
+    border-bottom: 3rem solid var(--burnt-brown);
+}
+footer section {
+    margin:2rem 0;
+}
+#follow-us ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+#follow-us svg:hover {
+    stroke: var(--crust-orange);
+}
+/*  -------------- TEXT STYLES --------------  */
+nav h2 {
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+
+}
+nav a, nav a:link, nav a:visited {
+    text-decoration: none;
+    color: var(--burnt-brown);
+    font-weight: bold;
+}
+nav a.active, nav a:hover {
+    color: var(--crust-orange);
+    border-bottom: 2px solid var(--crust-orange);
+}
+h1 {
+    font-family: 'trashhandregular', serif;
+    font-size: 1.6em;
+}
+h2 {
+    font-family: 'trashhandregular', serif;
+    font-size: 2.5em;
+    margin: .5em 0;
+}
+address {
+    line-height: 2em;
+}
+address p {
+    text-align: center;
+}
+/* -------------- MEDIA QUERY (MEDIUM) --------------  */
+@media screen and (min-width:880px) {
+    body {
+        text-align: left;
+    }
+    header, main, #visit-us, #follow-us {
+        padding: 0 1rem;
+    }
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 1rem;
+    }
+    header img {
+        grid-column: 1/-1;
+    }
+    nav {
+        margin-top:0;
+    }
+    nav ul{
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        justify-content: space-between;
+    }
+    footer {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    address p {
+        text-align: left;
+        display: inline-block;
+    }
+    #follow-us ul {
+        justify-content: flex-start;
+    }
+}
+/* -------------- MEDIA QUERY (LARGE) --------------  */
+@media screen and (min-width:1136px) {
+    
+}
+/* -------------- MEDIA QUERY (EXTRA LARGE) --------------  */
+@media screen and (min-width:1440px) {
+    header, #visit-us, #follow-us {
+        padding: 0 10rem;
+    }
+}
